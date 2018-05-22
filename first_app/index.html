@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- sets the application to a module by name -->
+<html lang="en" ng-app="myFirstApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- reference angular first, then your app.js file -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- link the controller to the view -->
+  <div ng-controller="myFirstController">
+    <!-- bind the $scope.name to the input. Databinding is two way by default -->
+    <input type="text" ng-model="name">
+    <br /> My cat's name is {{name}} {{saysHello()}}
+  </div>
+</body>
+
+</html>
