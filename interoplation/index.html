@@ -18,6 +18,8 @@
     <img src="images/orange_{{imageName()}}.jpg" alt="a cat that looks {{ imagename() }}" />
     <br />
     <button ng-click="changeHungerState()">{{ buttonName() }}</button>
+    <div>This expression will never change: Orange is always {{ seeminglyStatic}}</div>
+    <div>This updates because it's explicitly being reset: Orange is now {{ noLongerStatic }}</div>
   </div>
 </body>
 
