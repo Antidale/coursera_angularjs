@@ -14,9 +14,10 @@
   <H1>Name Calculator</H1>
   <div ng-controller="NameCalculatorController">
     <div>Your name:
-      <input type="text" name="" id="" ng-model="name" />
+      <input type="text" name="" id="" ng-model="name" ng-keyup="calculateFromKeyUp();" />
     </div>
     <div>Total Numeric value of person's name is: {{calculateName()}}</div>
+    <div>Also: {{totalValue}}</div>
   </div>
 </body>
 
