@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Name Calculator</title>
+</head>
+
+<body ng-app="NameCalculator">
+  <H1>Name Calculator</H1>
+  <div ng-controller="NameCalculatorController">
+    <div>Your name:
+      <input type="text" name="" id="" ng-model="name" />
+    </div>
+    <div>Total Numeric value of person's name is: {{calculateName()}}</div>
+  </div>
+</body>
+
+</html>
