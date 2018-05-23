@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Module 1 Assignment</title>
+</head>
+
+<body ng-app="LunchItems">
+  <H1>Lunch Items App</H1>
+  <div ng-controller="LunchItemsController">
+    <p>Enter your desired lunch as a comma separated list:</p>
+    <input type="text" ng-model="lunchItems" placeholder="salad, apple, water">
+    <button ng-click="calculateItemsCount()">Check If Too Much</button>
+    <div ng-if="buttonClicked">
+      <p ng-if=!displayFiltered>Unfiltered results: {{ message }}</p>
+      <p ng-if=displayFiltered>Filtered results: {{ filteredMessage }}</p>
+      <input type="checkbox" ng-model="displayFiltered" name="displayFilteredCheckbox">
+      <label for="displayFilteredCheckbox" style="font-size: small">Show filtered results?</label>
+    </div>
+    <br>
+  </div>
+</body>
+
+</html>
