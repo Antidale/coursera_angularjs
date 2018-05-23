@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+    crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Databinding</title>
+</head>
+
+<body ng-app="MyApp">
+  <div ng-controller="MyController">
+    <h2>Databinding - 2 way, 1 way, 1 time only</h2>
+    Using ng-model creates 2-way binding:
+    <input ng-model="name">
+    <p>Double curly braces "{&#8203;{ }&#8203;}" create 1-way binding, that is what is listed here can't change the input, but
+      it stays updated with the input field: {{name}}</p>
+    <p>One-time only looks like {&#8203;{ ::name }&#8203;}, and once initialized, it never update: {{::name}}
+    </p>
+  </div>
+</body>
+
+</html>
