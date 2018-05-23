@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+    crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Repeat Yourself</title>
+</head>
+
+<body ng-app="MyApp">
+  <div ng-controller="MyController">
+    <h2>Repetition: ng-repeat</h2>
+    <p>Some Numbers:</p>
+    <ul>
+      <li ng-repeat="item in numberList">{{item}}</li>
+    </ul>
+    <p>Pets I've had:</p>
+    <input placeholder="search by name or age" ng-model="searchText" />
+    <table class="pure-table pure-table-striped">
+      <tr>
+        <th>Pet Name</th>
+        <th>Pet Age</th>
+        <th>Fake Edit</th>
+      </tr>
+      <tr ng-repeat="pet in petsList | filter : searchText">
+        <td>{{::pet.Name}}</td>
+        <td>{{::pet.Age}}</td>
+        <td>
+          <input ng-model="pet.Age">
+        </td>
+      </tr>
+    </table>
+    <h3>add a new pet:</h3>
+    <input placeholder="pet name" ng-model="newPetName" />
+    <input placeholder="pet age" ng-model="newPetAge" />
+    <button ng-click="addPet()">Add Pet</button>
+  </div>
+</body>
+
+</html>
