@@ -26,6 +26,7 @@
     }
 
     let setMessageValue = (itemsArray) => {
+      //The first part of this OR relies on how arrays are coerced during == comparisons
       if (itemsArray == "" || itemsArray.length == 0)
         return needData;
 
