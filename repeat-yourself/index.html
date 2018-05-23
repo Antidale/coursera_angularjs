@@ -20,13 +20,14 @@
       <li ng-repeat="item in numberList">{{item}}</li>
     </ul>
     <p>Pets I've had:</p>
+    <input placeholder="search by name or age" ng-model="searchText" />
     <table class="pure-table pure-table-striped">
       <tr>
         <th>Pet Name</th>
         <th>Pet Age</th>
         <th>Fake Edit</th>
       </tr>
-      <tr ng-repeat="pet in petsList">
+      <tr ng-repeat="pet in petsList | filter : searchText">
         <td>{{::pet.Name}}</td>
         <td>{{::pet.Age}}</td>
         <td>
