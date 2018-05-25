@@ -1,21 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
-    crossorigin="anonymous">
+  <title>Shopping List Check Off</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
   <script src="app.js"></script>
-  <title>Document</title>
+  <style>
+    .emptyMessage {
+      font-weight: bold;
+      color: red;
+      font-size: 1.2em;
+    }
+
+    li {
+      margin-bottom: 7px;
+      font-size: 1.2em;
+    }
+
+    li>button {
+      margin-left: 6px;
+    }
+
+    button>span {
+      color: green;
+    }
+  </style>
 </head>
 
-<body ng-app="MyApp">
-  <div ng-controller="MyController">
+<body>
+  <div class="container">
+    <h1>Shopping List Check Off</h1>
 
+    <div class="row">
+
+      <!-- To Buy List -->
+      <div class="col-md-6">
+        <h2>To Buy:</h2>
+        <ul>
+          <li>Buy 10 cookies
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-ok"></span> Bought</button>
+          </li>
+          <li>Buy 10 cookies
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-ok"></span> Bought</button>
+          </li>
+        </ul>
+        <div class="emptyMessage">Everything is bought!</div>
+      </div>
+
+      <!-- Already Bought List -->
+      <div class="col-md-6">
+        <h2>Already Bought:</h2>
+        <ul>
+          <li>Bought 10 cookies</li>
+        </ul>
+        <div class="emptyMessage">Nothing bought yet.</div>
+      </div>
+    </div>
   </div>
+
 </body>
 
 </html>
