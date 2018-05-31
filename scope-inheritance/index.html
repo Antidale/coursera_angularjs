@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+    crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Document</title>
+</head>
+
+<body ng-app="MyApp">
+  <div ng-controller="MyController">
+    <div ng-controller="SecondController">
+
+    </div>
+    <div ng-controller="ThirdController">
+
+    </div>
+    <div ng-controller="FourthController">
+
+    </div>
+  </div>
+  <div ng-controller="ParentController as parent">
+    {{ parent.name }} - {{ parent.value }}
+    <div ng-controller="ChildController as child">
+      {{child.name}} - {{ child.value}}
+      <br /> And from the child controller: {{parent.name}}
+    </div>
+  </div>
+</body>
+
+</html>
