@@ -52,6 +52,10 @@
         Name: "cookies",
         Quantity: 3,
         Container: "packages"
+      }, {
+        Name: "soda",
+        Quantity: 4,
+        Container: "liters"
       }
     ];
 
