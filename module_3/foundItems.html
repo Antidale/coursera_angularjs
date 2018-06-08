@@ -1,0 +1,16 @@
+<table class="table table-condensed table-striped">
+  <tr>
+    <th>Short Name</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  <tr ng-repeat="item in foundItems">
+    <td>{{item.short_name}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.description}}</td>
+    <td>
+      <button class="btn btn-default" ng-click="onRemove({index: $index})">Don't want this one!</button>
+    </td>
+  </tr>
+</table>
