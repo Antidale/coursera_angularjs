@@ -15,7 +15,7 @@
       .state('categoryList', {
         url: '/category-list',
         templateUrl: 'src/templates/category-list.template.html',
-        contoller: "CategoryListController as categories",
+        controller: "CategoryListController as categories",
         resolve: {
           items: ['MenuDataService',
             (MenuDataService) => MenuDataService.getAllCategories()
