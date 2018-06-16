@@ -1,4 +1,23 @@
 body {
   font-size: 1.2em;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 5px;
+  padding: 5px;
+}
+
+a {
+  text-decoration: lightsteelblue;
+}
+
+a:hover {
+  border: 1px;
+  background-color: lightsteelblue;
 }
 
