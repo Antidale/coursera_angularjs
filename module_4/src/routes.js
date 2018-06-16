@@ -23,12 +23,12 @@
         }
       })
       .state('itemsList', {
-        url: '/items-list',
+        url: '/items-list/{category}',
         templateUrl: 'src/templates/items-list.template.html',
         controller: 'ItemsController as itemsList',
         resolve: {
-          items: ['MenuDataService',
-            (MenuDataService) => MenuDataService.getItemsForCategory("F")]
+          items: ['MenuDataService', '$stateParams',
+            (MenuDataService, $stateParams) => MenuDataService.getItemsForCategory($stateParams.category)]
         }
       })
 
