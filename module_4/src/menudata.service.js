@@ -4,7 +4,7 @@
     .service('MenuDataService', MenuDataService);
 
   MenuDataService.$inject = ['$http']
-  MenuDataService = ($http) => {
+  function MenuDataService($http) {
     let service = this;
 
     service.getAllCategories = () => {
@@ -13,7 +13,7 @@
         url: 'https://davids-restaurant.herokuapp.com/categories.json'
       })
     }
-
+    let test = true;
     service.getItemsForCategory = (categoryShortName) => {
       let baseURL = 'https://davids-restaurant.herokuapp.com/menu-items.json?category='
       return $http({
@@ -22,4 +22,4 @@
       })
     }
   }
-})
+})()
