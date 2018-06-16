@@ -17,7 +17,7 @@
         templateUrl: 'src/templates/category-list.template.html',
         controller: "CategoryListController as categories",
         resolve: {
-          items: ['MenuDataService',
+          categories: ['MenuDataService',
             (MenuDataService) => MenuDataService.getAllCategories()
           ]
         }
