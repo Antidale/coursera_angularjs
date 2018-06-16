@@ -3,23 +3,26 @@
   angular.module('data')
     .service('MenuDataService', MenuDataService);
 
-  MenuDataService.$inject = ['$http']
-  function MenuDataService($http) {
+  MenuDataService.$inject = ['$http', 'ApiBasePath']
+  function MenuDataService($http, ApiBasePath) {
     let service = this;
 
     service.getAllCategories = () => {
       return $http({
         method: 'GET',
-        url: 'https://davids-restaurant.herokuapp.com/categories.json'
+        url: (ApiBasePath + '/categories.json')
       })
+        .then(response => response.data);
     }
-    let test = true;
+
     service.getItemsForCategory = (categoryShortName) => {
-      let baseURL = 'https://davids-restaurant.herokuapp.com/menu-items.json?category='
       return $http({
         method: 'GET',
-        url: baseURL + categoryShortName
-      })
+        url: (ApiBasePath + "/menu_items.json"),
+        params: {
+          category: categoryShortName
+        }
+      }).then((response) => response.data);
     }
   }
-})()
+})();
