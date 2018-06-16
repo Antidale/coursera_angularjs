@@ -22,7 +22,7 @@
         params: {
           category: categoryShortName
         }
-      }).then((response) => response.data);
+      }).then(response => response.data);
     }
   }
 })();

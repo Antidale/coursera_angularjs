@@ -22,6 +22,15 @@
           ]
         }
       })
+      .state('itemsList', {
+        url: '/items-list',
+        templateUrl: 'src/templates/items-list.template.html',
+        controller: 'ItemsController as itemsList',
+        resolve: {
+          items: ['MenuDataService',
+            (MenuDataService) => MenuDataService.getItemsForCategory("F")]
+        }
+      })
 
   }
 })()
