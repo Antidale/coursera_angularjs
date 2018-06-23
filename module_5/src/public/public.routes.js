@@ -50,9 +50,9 @@
           getShortName: ['MenuService', function (MenuService) {
             return MenuService.getShortName
           }],
-          // setUserInfo: ['UserService', function (UserService) {
-          //   return UserService.setUserInfo
-          // }]
+          setUserInfo: ['UserService', function (UserService) {
+            return UserService.setUserInfo
+          }]
         }
       });
   }

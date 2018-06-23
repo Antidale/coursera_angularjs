@@ -4,8 +4,8 @@
   angular.module('public')
     .controller('SignupController', SignupController)
 
-  SignupController.$inject = ['getShortName']//, 'UserService']
-  function SignupController(getShortName) {//, setUserInfo) {
+  SignupController.$inject = ['getShortName', 'setUserInfo']
+  function SignupController(getShortName, setUserInfo) {
     let vm = this;
     vm.message = "";
 
@@ -15,7 +15,8 @@
           setUserInfo(vm.user)
           vm.message = "Your information has been saved!"
         })
-        .catch(err => vm.message = "No such menu number exists")
+        .catch(() => vm.message = "No such menu number exists")
     }
+
   }
 })()
