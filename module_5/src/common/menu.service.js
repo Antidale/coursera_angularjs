@@ -27,12 +27,8 @@
     };
 
     service.getShortName = function (input) {
-      var config = {};
-      if (input) {
-        config.params = { 'short_name': input }
-        return $http.get(ApiPath + '/menu_items', config)
-          .then(response => response.data);
-      }
+      return $http.get(`${ApiPath}/menu_items/${input}.json`)
+        .then(response => response.data);
     }
 
   }
