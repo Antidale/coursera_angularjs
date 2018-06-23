@@ -10,8 +10,9 @@
     vm.message = "";
 
     vm.submit = () => {
-      getShortName(vm.user.favoriteFood)
-        .then(() => {
+      getShortName(vm.user.favFoodShortName.toUpperCase())
+        .then((response) => {
+          vm.user.favoriteFood = response
           setUserInfo(vm.user)
           vm.message = "Your information has been saved!"
         })

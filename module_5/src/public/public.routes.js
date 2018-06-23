@@ -54,6 +54,17 @@
             return UserService.setUserInfo
           }]
         }
+      })
+      .state('public.user', {
+        url: '/user',
+        templateUrl: 'src/public/user/user.html',
+        controller: 'UserController',
+        controllerAs: 'userCtrl',
+        resolve: {
+          user: ['UserService', function (UserService) {
+            return UserService.getUserInfo();
+          }]
+        }
       });
   }
 })();

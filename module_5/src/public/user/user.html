@@ -1,0 +1,15 @@
+<div class="container">
+  <div ng-show="userCtrl.user">
+    <h2>{{ userCtrl.user.firstName }} {{ userCtrl.user.lastName }}</h2>
+    <h3>Email: {{ userCtrl.user.email }}</h3>
+    <h3>Phone: {{ userCtrl.user.phoneNumber }}</h3>
+    <br>
+    <h3>Favorite Food:</h3>
+    <fav-menu-item menu-item="userCtrl.user.favoriteFood"></fav-menu-item>
+  </div>
+  <div ng-hide="userCtrl.user">
+    <h2>Not Signed Up!
+      <a ui-sref="public.signup">Sign up now!</a>
+    </h2>
+  </div>
+</div>

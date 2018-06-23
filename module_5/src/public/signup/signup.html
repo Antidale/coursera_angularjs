@@ -3,21 +3,24 @@
 <form name="signupForm" novalidate>
   <label for="firstName">First Name:</label>
   <input type="text" name="firstName" id="firstName" ng-model="signupCtrl.user.firstName" required>
-  <span ng-if></span>
+  <span ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">A first name must be entered</span>
   <br />
 
   <label for="lastName">Last Name:</label>
   <input type="text" name="lastName" id="lastName" ng-model="signupCtrl.user.lastName" required>
+  <span ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">A first name must be entered</span>
   <br />
 
   <label for="email">Email: </label>
   <input type="email" name="email" id="email" ng-model="signupCtrl.user.email" required>
+  <span ng-if="signupForm.email.$error.required && signupForm.email.$touched">An email address must be provided</span>
   <br />
   <label for="phoneNumber">Phone Number:</label>
-  <input type="tel" name="phoneNumber" id="phoneNumber" ng-model="signupCtrl.user.phoneNumber" required>
+  <input type="tel" name="phoneNumber" id="phoneNumber" ng-model="signupCtrl.user.phoneNumber" pattern="(\d{3})-(\d{3})-(\d{4})">
+  <span ng-if="signupForm.phoneNumber.$invalid && signupForm.phoneNumber.$touched">Phone must be in the format ###-###-####</span>
   <br />
-  <label for="favoriteFood">Favorite Dish:</label>
-  <input type="text" name="favoriteFood" id="favoriteFood" ng-model="signupCtrl.user.favoriteFood" required>
+  <label for="favFoodShortName">Favorite Dish:</label>
+  <input type="text" name="favFoodShortName" id="favFoodShortName" ng-model="signupCtrl.user.favFoodShortName">
   <br>
   <button ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()" class="btn btn-primary" type="submit">Sign up!</button>
 </form>
