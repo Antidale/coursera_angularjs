@@ -1,0 +1,23 @@
+<h3>Sign up for our newsletter!</h3>
+
+<form name="signupForm" novalidate>
+  <label for="firstName">First Name:</label>
+  <input type="text" name="firstName" id="firstName" ng-model="signupCtrl.user.firstName" required>
+  <span ng-if></span>
+  <br />
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" name="lastName" id="lastName" ng-model="signupCtrl.user.lastName" required>
+  <br />
+
+  <label for="email">Email: </label>
+  <input type="email" name="email" id="email" ng-model="signupCtrl.user.email" required>
+  <br />
+  <label for="phoneNumber">Phone Number:</label>
+  <input type="tel" name="phoneNumber" id="phoneNumber" ng-model="signupCtrl.user.phoneNumber" required>
+  <br />
+  <label for="favoriteFood">Favorite Dish:</label>
+  <input type="text" name="favoriteFood" id="favoriteFood" ng-model="signupCtrl.user.favoriteFood" required>
+  <br>
+  <button ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()" class="btn btn-primary" type="submit">Sign up!</button>
+</form>
